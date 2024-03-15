@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:500"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="after-body">
+      <div class="container">
+        <div class="all-pages">
+          <p>All pages</p>
+          <div class="checkbox-container">
+            <input type="checkbox" id="checkbox1" />
+            <label for="checkbox1"></label>
+          </div>
+        </div>
+        <hr />
+        <div class="pages-list">
+          <div class="content">
+            <p>Page 1</p>
+            <div class="checkbox-container">
+              <input type="checkbox" id="checkbox2" />
+              <label for="checkbox2"></label>
+            </div>
+          </div>
+          <div class="content">
+            <p>Page 2</p>
+            <div class="checkbox-container">
+              <input type="checkbox" id="checkbox3" />
+              <label for="checkbox3"></label>
+            </div>
+          </div>
+          <div class="content">
+            <p>Page 3</p>
+            <div class="checkbox-container">
+              <input type="checkbox" id="checkbox4" />
+              <label for="checkbox4"></label>
+            </div>
+          </div>
+          <div class="content">
+            <p>Page 4</p>
+            <div class="checkbox-container">
+              <input type="checkbox" id="checkbox5" />
+              <label for="checkbox5"></label>
+            </div>
+          </div>
+          <div class="content">
+            <p>Page 5</p>
+            <div class="checkbox-container">
+              <input type="checkbox" id="checkbox6" />
+              <label for="checkbox6"></label>
+            </div>
+          </div>
+          <div class="content">
+            <p>Page 6</p>
+            <div class="checkbox-container">
+              <input type="checkbox" id="checkbox7" />
+              <label for="checkbox7"></label>
+            </div>
+          </div>
+          <div class="content">
+            <p>Page 7</p>
+            <div class="checkbox-container">
+              <input type="checkbox" id="checkbox8" />
+              <label for="checkbox8"></label>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="buttonClass">
+          <button>Done</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document
+      .querySelector('.all-pages input[type="checkbox"]')
+      .addEventListener("change", function (e) {
+        var isChecked = e.target.checked;
+        var checkboxes = document.querySelectorAll(
+          '.pages-list input[type="checkbox"]'
+        );
+        checkboxes.forEach(function (checkbox) {
+          checkbox.checked = isChecked;
+        });
+      });
+
+    document
+      .querySelectorAll('.pages-list input[type="checkbox"]')
+      .forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+          if (!this.checked) {
+            document.querySelector(
+              '.all-pages input[type="checkbox"]'
+            ).checked = false;
+          }
+        });
+      });
+  </script>
+</html>
